@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="keywords" content="DATRO, consortium, web" />
+  <meta charset="UTF-8" />
+  <meta content="FinanceCheque UK Archives — Versioned Document Archive" name="description" />
+  <meta content="DATRO Consortium" name="author" />
+  <title>FinanceCheque UK Archives</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no" name="viewport" />
+  <link href="_theme-explorer/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link rel="stylesheet" href="_theme-explorer/style.css" />
+  <link rel="stylesheet" href="_theme-explorer/glyphicon.css" />
+  <style>
+button, a, input, select, textarea { min-height: 44px; min-width: 44px; }
+</style>
+</head>
+  <body>
+  <script>
+  (async () => {
+    let manifest = {};
+    try { manifest = await (await fetch("./_archives_manifest.json")).json(); } catch {}
+    const files = manifest.deployed_files || [];
+    let h = "";
+    h += `<p class="main-title"><span style="font-size:1.1em;font-weight:700;color:#55a5d9;">Finance Cheque UK</span><br /><br />Archives — Versioned Document Store</p>`;
+    if (!files.length) {
+      h += "<p>No archived documents yet. Archives are populated automatically by the llmwiki pipeline.</p>";
+    } else {
+      h += "<ul>";
+      for (const f of files) h += `<li class="li"><a href="${f}">${f}</a></li>`;
+      h += "</ul>";
+    }
+    document.body.innerHTML = h;
+  })();
+  </script>
+  <script src="_theme-explorer/jquery.min.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4da919108b51bed',t:'MTc5MjUyNjAwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
